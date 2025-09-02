@@ -1,8 +1,7 @@
 html, body {
-    margin: 0;
-    padding: 0;
+    margin: 0 6px 0 6px;
+    padding: 0 6px 0 6px;
     height: 90%;
-    overflow-x: hidden;
 }
 
 .navigation{

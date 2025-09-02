@@ -1,8 +1,10 @@
+import styles from './Footer.module.css'
+
 function Footer(){
     const year: number = new Date().getFullYear()
     return (
-        <footer>
-            <p>&copy; Alexsandro {year}</p>
+        <footer className={styles.container}>
+            <p className={styles.footerText}>&copy; Alexsandro {year}</p>
         </footer>
     )
 }

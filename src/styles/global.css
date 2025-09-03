@@ -3,6 +3,7 @@ html, body, #root {
     margin: 0;
     padding: 0;
     overflow: hidden;
+    color: #ffffff;
 
     background: #404040;
     background: linear-gradient(54deg,rgba(0, 0, 38, 1) 0%, rgba(0, 93, 133, 1) 50%, rgba(12, 183, 201, 1) 94%);

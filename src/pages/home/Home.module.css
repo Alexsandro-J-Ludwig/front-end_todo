@@ -7,9 +7,9 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 70vh;
+    height: 50vh;
     width: 30vw;
-    margin: 50px auto;
+    margin: 150px auto;
     border-radius: 50px;
     background-color: rgba(0, 0, 0, 0.151);
     flex-direction: column;
@@ -25,6 +25,7 @@ body, html {
     border: none;
     width: 160px;
     height: 80px;
+    color: white
 }
 
 .botao {
@@ -66,6 +67,7 @@ body, html {
     height: 30px;
     font-size: 15px;
     border: none;
+    color: white;
 }
 
 .emailInput:focus, .passInput:focus {
@@ -78,4 +80,19 @@ a {
     font-size: 17px;
     text-decoration: none;
     color: inherit;
+}
+
+@media screen and (max-width: 768px){
+    .contaiener {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50vh;
+        width: 80vw;
+        margin: 150px auto;
+        border-radius: 50px;
+        background-color: rgba(0, 0, 0, 0.151);
+        flex-direction: column;
+        padding: 20px; 
+    }
 }

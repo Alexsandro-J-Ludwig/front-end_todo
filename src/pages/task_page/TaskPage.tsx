@@ -1,7 +1,15 @@
+import Nav from "../../components/shared/Nav/Nav.module"
+import Footer from "../../components/shared/Footer/Footer";
+import Task from "../../components/Task/Task";
+
 function TaskPage(){
     return(
         <>
-            <h1>Oi</h1>
+            <div>
+                <Nav/>
+                <Task/>
+                <Footer/>
+            </div>
         </>
     )
 }

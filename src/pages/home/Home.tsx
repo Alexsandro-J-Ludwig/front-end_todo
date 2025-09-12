@@ -18,7 +18,7 @@ function Home() {
                 <section>
                     <div className={styles.loginContainer}>
                     <LoginModal/>
-                        <button className={styles.botaoSign}>Cadastrar</button>
+                        <button className={styles.botaoSign} onClick={handleClick}>Cadastrar</button>
                     </div>
                     
                 </section>

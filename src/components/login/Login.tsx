@@ -23,24 +23,30 @@ export default function LoginModal() {
         aria-describedby="modal-modal-description"
       >
         <Box className={styles.container}>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
-            Text in a modal
+
+          <Typography className={styles["modal-modal-title"]} variant="h6" component="h2">
+            Login
           </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
 
-            <input 
-            className={styles.imputEmail}
-            type='email' 
-            placeholder='E-mail' 
-            autoComplete='off'></input>
+          <Typography className={styles["emailInput"]}>
+            <input  
+              className={styles['imputEmail']}
+              type='email' 
+              placeholder='E-mail' 
+              autoComplete='off'
+              ></input>
+          </Typography>
 
+          <Typography className={styles["passInput"]}>
             <input
-            className={styles.imputPass}
-            type="password" 
-            placeholder='Senha'   
-            autoComplete='off'></input>
+              className={styles["imputPass"]}
+              type="password" 
+              placeholder='Senha'   
+              autoComplete='off'></input>
+          </Typography>
 
-            <button>Entrar</button>
+          <Typography className={styles["botaoLogin"]}>
+            <button className={styles.entrar}>Entrar</button>
           </Typography>
         </Box>
       </Modal>

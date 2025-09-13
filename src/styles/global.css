@@ -5,10 +5,10 @@ html, body, #root {
     overflow: hidden;
     color: #ffffff;
 
-    background: #404040;
-    background: linear-gradient(54deg,rgba(0, 0, 38, 1) 0%, rgba(0, 93, 133, 1) 50%, rgba(12, 183, 201, 1) 94%);
+    background: #ffffff;
+    background: linear-gradient(54deg,rgb(201, 201, 201) 0%, rgb(224, 224, 224) 50%, rgb(255, 236, 207) 94%);
     background-size: 200% 200%;
-    animation: gradientBackground 60s ease-in-out infinite alternate;
+    animation: gradientBackground 5s ease-in-out infinite alternate;
     animation-iteration-count: infinite;
 }
 

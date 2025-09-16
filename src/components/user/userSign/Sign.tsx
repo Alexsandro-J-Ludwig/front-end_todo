@@ -5,6 +5,7 @@ import Modal from '@mui/material/Modal';
 import styles from "./Sign.module.css"
 import { useState } from 'react'
 import UserErrorModal from '../userError/userError';
+import signup from '../../../service/users/signup/signup';
 
 const SignModal: React.FC = () => {
 
@@ -51,6 +52,7 @@ const SignModal: React.FC = () => {
             setErrorMsg(errors.join(`\n`)); // Junta todas as mensagens de erro em uma string
         } else {
             // Se todas as validações passarem, limpa a mensagem de erro e executa a ação
+            signup(username, email, password)
             setErrorMsg('');
         }
     };

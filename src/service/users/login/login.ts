@@ -15,7 +15,7 @@ const login = async(email:string, password:string) => {
         }
 
         const user = await response.json();
-        const token:string = user.token;
+        const token:string = user;
 
         localStorage.setItem("token", token);
     } catch(err){

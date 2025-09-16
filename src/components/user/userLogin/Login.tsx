@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import styles from "./Login.module.css"
-import login from "../../../service/users/login"
+import login from "../../../service/users/login/login"
 import { useState } from 'react';
 import UserErrorModal from '../userError/userError';
 

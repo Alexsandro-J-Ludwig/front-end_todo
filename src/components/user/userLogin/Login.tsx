@@ -21,7 +21,7 @@ const LoginModal: React.FC = () => {
 
   const regexEmail: RegExp = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-  const handleRegister = () => {
+  const handleRegister = async () => {
     const errors: string[] = [];
 
     // Validação de campos vazios
@@ -54,9 +54,13 @@ const LoginModal: React.FC = () => {
     } else {
         // Se todas as validações passarem, limpa a mensagem de erro e executa a ação
         setErrorMsg('');
-        login(email, password)
-        if(JSON.stringify(localStorage.getItem('token'))){
-          navigate("/task_page/TaskPage");
+        const result = await login(email, password);
+
+        if(result) {
+          setErrorMsg("Login efetuado")
+          await navigate("/task_page/TaskPage");
+        } else {
+          setErrorMsg('Login falhou');
         }
         }
     }

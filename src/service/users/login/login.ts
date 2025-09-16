@@ -17,7 +17,7 @@ const login = async(email:string, password:string) => {
 
         localStorage.setItem("token", token);   
 
-        return "logado"
+        return "true"
     } catch(err){
         console.error(`Erro de servidor: ${err}`);
     }

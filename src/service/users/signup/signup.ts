@@ -13,15 +13,17 @@ const signup = async(username: string, email: string, password: string) => {
         }
 
         const data = await response.json();
-        const token:string = data.token; // acessa o token dentro do objeto
+        const token:string = data.token;
 
         console.log(data);
         
-
         if(data.msg){
             alert("Usuario ja existe")
         }
         localStorage.setItem("token", token);
+
+        return true;
+    
     } catch (error) {
         console.error(`Erro de requisição: ${error}`);
         return "Erro na requisição";

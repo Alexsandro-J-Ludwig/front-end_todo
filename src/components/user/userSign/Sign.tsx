@@ -22,7 +22,7 @@ const SignModal: React.FC = () => {
     const [password, setPassword] = useState<string>("");
     const [errorMsg, setErrorMsg] = useState<string>('');
 
-    const handleRegister = () => {
+    const handleRegister = async () => {
         const errors: string[] = [];
 
         // Validação de campos vazios
@@ -55,15 +55,17 @@ const SignModal: React.FC = () => {
         } else {
             // Se todas as validações passarem, limpa a mensagem de erro e executa a ação
             setErrorMsg('');
-            signup(username, email, password);
 
-            const token = localStorage.getItem('token');
-            if (token) {
-            navigate("/task_page/TaskPage");
+            const result = await signup(username, email, password);
+            if(result) {
+                setErrorMsg("Cadastro efetuado")
+                navigate("/task_page/TaskPage");
+            } else {
+                setErrorMsg('Login falhou');
             }
-
         }
-    };
+        }
+
 
     return (
         <div>

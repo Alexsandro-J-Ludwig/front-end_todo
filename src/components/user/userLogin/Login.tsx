@@ -6,8 +6,10 @@ import styles from "./Login.module.css"
 import login from "../../../service/users/login/login"
 import { useState } from 'react';
 import UserErrorModal from '../userError/userError';
+import { useNavigate } from "react-router-dom";
 
 const LoginModal: React.FC = () => {
+  const navigate = useNavigate();
 
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
@@ -46,15 +48,19 @@ const LoginModal: React.FC = () => {
         errors.push("\nSenha deve ter ao menos um número.");
     }
 
-    login(email, password)
     // Verifica se há algum erro e define a mensagem de erro
     if (errors.length > 0) {
         setErrorMsg(errors.join(`\n`)); // Junta todas as mensagens de erro em uma string
     } else {
         // Se todas as validações passarem, limpa a mensagem de erro e executa a ação
         setErrorMsg('');
+        login(email, password)
+        if(JSON.stringify(localStorage.getItem('token'))){
+          navigate("/task_page/TaskPage");
+        }
+        }
     }
-};
+
 
   return (
     <div>

@@ -1,10 +1,8 @@
 const login = async(email:string, password:string) => {
-    try {
-        if(!email || !password){
-            return "Email ou senha inválidos"
-        };
+    const url:string = "https://tasklist-production-d15b.up.railway.app"
 
-        const response = await fetch("http://localhost:3000/user/login", {
+    try {
+        const response = await fetch(`${url}/user/login`, {
             method: "POST",
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email, password })
@@ -14,12 +12,14 @@ const login = async(email:string, password:string) => {
             return console.error("Erro de requisição");
         }
 
-        const user = await response.json();
-        const token:string = user;
+        const data = await response.json();
+        const token: string = data.token;
 
-        localStorage.setItem("token", token);
+        localStorage.setItem("token", token);   
+
+        return "logado"
     } catch(err){
-        console.error("Erro de servidor", err);
+        console.error(`Erro de servidor: ${err}`);
     }
 }
 

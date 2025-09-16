@@ -15,7 +15,7 @@ function Home() {
         <button className={styles.botaoSign} onClick={handleClick}>Admin</button>
             <div className={styles.contaiener}>
                 <div>
-                    <h1>Bem-vindo(a) a ToDo</h1>
+                    <h1 className={styles["titulo"]}>Bem-vindo(a) a ToDo</h1>
                 </div>
                 <section>
                     <div className={styles.loginContainer}>

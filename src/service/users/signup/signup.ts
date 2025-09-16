@@ -1,10 +1,8 @@
 const signup = async(username: string, email: string, password: string) => {
-    try {
-        if(!username || !email || !password){
-            return "Nenhum campo pode estar vazio";
-        }
+    const url:string = "https://tasklist-production-d15b.up.railway.app"
 
-        const response = await fetch("http://localhost:3000/user/signup", {
+    try {
+        const response = await fetch(`${url}/user/signup`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ username, email, password })
@@ -15,11 +13,15 @@ const signup = async(username: string, email: string, password: string) => {
         }
 
         const data = await response.json();
-        const token: string = data.token; // acessa o token dentro do objeto
+        const token:string = data.token; // acessa o token dentro do objeto
 
+        console.log(data);
+        
+
+        if(data.msg){
+            alert("Usuario ja existe")
+        }
         localStorage.setItem("token", token);
-
-        return "Cadastro realizado com sucesso!";
     } catch (error) {
         console.error(`Erro de requisição: ${error}`);
         return "Erro na requisição";

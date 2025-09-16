@@ -1,8 +1,8 @@
 // userError/userError.tsx
 import * as React from 'react';
 import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import Modal from '@mui/material/Modal';
+import Snackbar  from '@mui/material/Snackbar';
+import Alert from "@mui/material/Alert"
 import styles from "./UserError.module.css"
 
 // Define a interface para as props
@@ -13,18 +13,25 @@ interface UserErrorModalProps {
 }
 
 const UserErrorModal: React.FC<UserErrorModalProps> = ({ errorMsg, open, onClose }) => {
-
     return (
-        <Modal open={open} onClose={onClose}>
+        <Snackbar  
+            open={open} 
+            onClose={onClose}
+            className={styles["snackbar"]} 
+            key={CSSTransition ? CSSTransition.name : ''}
+            anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+            >
             <Box className={styles["container"]}>
-                <Typography component="h1" className={styles["titulo"]}>
-                    Ops! Ocorreu um erro
-                </Typography>
-                <Typography component='p' className={styles["message"]}>
+                <Alert 
+                    onClose={onClose} 
+                    className={styles["alerta"]}
+                    icon={false}
+                    sx={{backgroundColor: "#fff0f0", opacity:"70%", color: "black", width:"300px", alignItems: "center", justifyContent: "center"}}
+                    >
                     {errorMsg}
-                </Typography>
+                </Alert>
             </Box>
-        </Modal>
+        </Snackbar >
     );
 }
 

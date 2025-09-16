@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import styles from './Home.module.css';
-import LoginModal from "../../components/user/Login";
-import SignModal from "../../components/user/Sign";
+import LoginModal from "../../components/user/userLogin/Login";
+import SignModal from "../../components/user/userSign/Sign";
 
 function Home() {
     const navigate = useNavigate();

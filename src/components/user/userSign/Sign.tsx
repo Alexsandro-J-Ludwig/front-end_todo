@@ -3,7 +3,8 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import styles from "./Sign.module.css"
-import { useState } from 'react';
+import { useState } from 'react'
+import UserErrorModal from '../userError/userError';
 
 const SignModal: React.FC = () => {
 
@@ -47,12 +48,10 @@ const SignModal: React.FC = () => {
 
         // Verifica se há algum erro e define a mensagem de erro
         if (errors.length > 0) {
-            setErrorMsg(errors.join(" ")); // Junta todas as mensagens de erro em uma string
-            alert(errorMsg)
+            setErrorMsg(errors.join(`\n`)); // Junta todas as mensagens de erro em uma string
         } else {
             // Se todas as validações passarem, limpa a mensagem de erro e executa a ação
             setErrorMsg('');
-            alert(`Nome de usuario: ${username}\nEmail: ${email}\nSenha: ${password}`);
         }
     };
 
@@ -113,10 +112,19 @@ const SignModal: React.FC = () => {
                         />
                     </Typography>
 
+                    {errorMsg && (
+                        <UserErrorModal 
+                            errorMsg={errorMsg} 
+                            open={true} 
+                            onClose={() => setErrorMsg('')} // fecha limpando a mensagem
+                        />
+                    )}
+
                     <Typography className={styles["botaoLogin"]}>
                         <button 
                             className={styles.entrar} 
-                            onClick={handleRegister}
+                            onClick={() => {
+                                handleRegister()}}
                         >
                             Entrar
                         </button>            

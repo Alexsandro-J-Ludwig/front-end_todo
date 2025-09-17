@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import styles from "./Login.module.css"
-import login from "../../../service/users/login/login"
+import Login from "../../../service/users/login/login"
 import { useState } from 'react';
 import UserErrorModal from '../userError/userError';
 import { useNavigate } from "react-router-dom";
@@ -54,7 +54,7 @@ const LoginModal: React.FC = () => {
     } else {
         // Se todas as validações passarem, limpa a mensagem de erro e executa a ação
         setErrorMsg('');
-        const result = await login(email, password);
+        const result = await Login.login(email, password);
 
         if(result) {
           setErrorMsg("Login efetuado")

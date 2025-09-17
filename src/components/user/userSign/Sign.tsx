@@ -5,7 +5,7 @@ import Modal from '@mui/material/Modal';
 import styles from "./Sign.module.css"
 import { useState } from 'react'
 import UserErrorModal from '../userError/userError';
-import signup from '../../../service/users/signup/signup';
+import Signup from '../../../service/users/signup/signup';
 import { useNavigate } from "react-router-dom";
 
 const SignModal: React.FC = () => {
@@ -56,7 +56,7 @@ const SignModal: React.FC = () => {
             // Se todas as validações passarem, limpa a mensagem de erro e executa a ação
             setErrorMsg('');
 
-            const result = await signup(username, email, password);
+            const result = await Signup.signup(username, email, password);
             if(result) {
                 setErrorMsg("Cadastro efetuado")
                 navigate("/task_page/TaskPage");

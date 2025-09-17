@@ -1,3 +1,5 @@
+const url: string = "https://tasklist-production-d15b.up.railway.app";
+
 interface TaskAttributes {
   titulo: string;
   descricao?: string;
@@ -13,8 +15,6 @@ class TaskManager implements TaskAttributes {
   }
 
   static async task(titulo: string, descricao: string) {
-    const url: string = "https://tasklist-production-d15b.up.railway.app";
-
     try {
       const response = await fetch(`${url}/tasks/createTask`, {
         method: "POST",
@@ -25,17 +25,38 @@ class TaskManager implements TaskAttributes {
         body: JSON.stringify({ titulo, descricao }),
       });
 
-      if(!response.ok){
+      if (!response.ok) {
         const errorData = await response.json();
         throw new Error(errorData.message || "Erro na requisição.");
-      };
+      }
 
       const data = await response.json();
       return { success: true, data };
-
     } catch (error) {
       console.error(`Erro de servidor:`, error);
-      throw error; 
+      throw error;
+    }
+  }
+
+  static async getTask() {
+    try {
+      const response = await fetch(`${url}/tasks/getTask`, {
+        headers: {
+          Authorization: `baerer ${localStorage.getItem("token")}`,
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.message || "Erro na requisição.");
+      }
+
+      const data = await response.json();
+      return { success: true, data };
+    } catch (error) {
+      console.error(`Erro de servidor:`, error);
+      throw error;
     }
   }
 }

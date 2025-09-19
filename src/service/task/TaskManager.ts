@@ -1,4 +1,4 @@
-const url: string = "https://tasklist-production-d15b.up.railway.app";
+const url: string = "https://tasklist-uih7.onrender.com";
 
 interface TaskAttributes {
   titulo: string;

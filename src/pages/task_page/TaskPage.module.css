@@ -11,4 +11,11 @@
     padding: 20px;
     text-shadow: 3px 2px 5px #00000059;
     box-shadow: 25px 20px 15px 10px rgba(0, 0, 0, 0.171);
+
+}
+
+.displayTasksContainer {
+  /* ... outros estilos ... */
+  height: 500px; /* Defina uma altura fixa, ajuste conforme necessário */
+  overflow-y: auto; /* Cria a barra de rolagem vertical */
 }

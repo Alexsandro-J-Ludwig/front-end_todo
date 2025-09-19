@@ -7,11 +7,12 @@ import useAuth from "../../service/users/useAuth";
 
 function Home() {
   const navigate = useNavigate();
-  const { isLogged } = useAuth();
+  const { isLogged, loading } = useAuth();
 
   useEffect(() => {
-      if (!isLogged) {
-        navigate("/task_page/TaskPage");
+      if (isLogged && loading) {
+        
+        navigate("/task_page");
       }
     }, [isLogged, navigate]);
 

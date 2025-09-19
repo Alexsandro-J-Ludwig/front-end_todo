@@ -32,7 +32,7 @@ function Task() {
   }, []);
 
   return (
-    <ul>
+    <ul className={styles["task"]}>
       {tasks.map((task) => (
         <li key={task.id}>
           <FormControlLabel 

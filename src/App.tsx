@@ -1,22 +1,22 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Footer from './components/shared/Footer/Footer';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Footer from "./components/shared/Footer/Footer";
 import "./App.css";
-import Home from './pages/home/Home';
-import TaskPage from './pages/task_page/TaskPage';
-import './styles/global.css'
+import Home from "./pages/home/Home";
+import TaskPage from "./pages/task_page/TaskPage";
+import "./styles/global.css";
 
 function App() {
   return (
     <>
       <Router>
         <Routes>
-          <Route path='/home' element={<Home/>}/>
-          <Route path='/task_page/TaskPage' element={<TaskPage/>}/>
+          <Route path="/" element={<Home />} />
+          <Route path="/task_page" element={<TaskPage />} />
         </Routes>
-        <Footer/>
+        <Footer />
       </Router>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

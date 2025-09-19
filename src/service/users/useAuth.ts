@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 
 function useAuth(){
     const [isLogged, setIsLogged] = useState(false);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const token = localStorage.getItem('token');
@@ -33,7 +34,7 @@ function useAuth(){
         setIsLogged(false);
     };
 
-    return { isLogged, logout}
+    return { isLogged, logout, loading}
 }
 
 export default useAuth;

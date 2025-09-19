@@ -16,7 +16,7 @@ class Signup implements SignupAttribute {
   }
 
   static async signup(username: string, email: string, password: string) {
-    const url: string = "https://tasklist-production-d15b.up.railway.app";
+    const url: string = "https://tasklist-uih7.onrender.com";
 
     try {
       const response = await fetch(`${url}/user/signup`, {
@@ -31,9 +31,7 @@ class Signup implements SignupAttribute {
 
       const data = await response.json();
       const token: string = data.token;
-
-      console.log(data);
-
+      
       if (data.msg) {
         alert("Usuario ja existe");
       }

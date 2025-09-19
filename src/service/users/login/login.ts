@@ -13,7 +13,7 @@ class Login implements LoginAttributes {
   }
 
   static async login(email: string, password: string) {
-    const url: string = "https://tasklist-production-d15b.up.railway.app";
+    const url: string = "https://tasklist-uih7.onrender.com";
 
     try {
       const response = await fetch(`${url}/user/login`, {

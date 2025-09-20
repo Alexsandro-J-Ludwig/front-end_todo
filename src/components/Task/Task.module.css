@@ -4,16 +4,18 @@
   align-items: center; 
   list-style: none;
   padding: 0;
-  margin: 20px auto; 
-  width: 90%; 
-  max-width: 600px; 
+  margin: 20px auto;  
+  height: 450px;
+  max-width: 600px;
+  overflow: auto;
+  scrollbar-width: none;
 }
 
 .task li {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between; 
+  justify-content: space-between;
   height: 50px; 
   width: 100%;
   margin-bottom: 15px;
@@ -24,4 +26,10 @@
               -6px -6px 10px rgba(255, 255, 255, .5),
               6px 6px 8px rgba(255, 255, 255, .075),
               6px 6px 10px rgba(0, 0, 0, .15);
+}
+/* Style for when the task is completed */
+.task-completed {
+  text-decoration: line-through;
+  color: gray;
+  opacity: 0.6;
 }

@@ -9,6 +9,14 @@ interface TaskAttribute{
   id:number;
   titulo:string;
   descricao?:string
+  status:string;
+}
+
+const handleDelete = async (id:number) => {
+    const response = await TaskManager.deleteTask(id);
+    if (response?.success) {
+        console.log(`Tarefa deletada com sucesso.`);
+    }
 }
 
 function Task() {
@@ -38,6 +46,10 @@ function Task() {
           <FormControlLabel 
             control={<Checkbox />} 
             label={task.titulo} 
+            onChange={() => {
+              handleDelete(task.id)
+              loadTasks();
+            }}
           />
           <ViewTask 
             id={task.id}
@@ -46,6 +58,7 @@ function Task() {
           />
         </li>
       ))}
+      {tasks.length === 0 && <p>Nenhuma tarefa disponível.</p>}
     </ul>
   );
 }

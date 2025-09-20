@@ -1,3 +1,8 @@
+const url: string = "https://tasklist-uih7.onrender.com";
+
+//============================================================================
+// Define a interface para os atributos de signup
+//============================================================================
 interface SignupAttribute {
   username: string;
   email: string;
@@ -5,19 +10,26 @@ interface SignupAttribute {
 }
 
 class Signup implements SignupAttribute {
+  //============================================================================
+  // Encapsula os atributos de signup
+  //============================================================================
   public username: string;
   public email: string;
   public password: string;
 
+  //============================================================================
+  // Construtor da classe Signup
+  //============================================================================
   constructor(username: string, email: string, password: string) {
     this.username = username;
     this.email = email;
     this.password = password;
   }
 
+  //============================================================================
+  // Método para realizar o cadastro do usuário
+  //============================================================================
   static async signup(username: string, email: string, password: string) {
-    const url: string = "https://tasklist-uih7.onrender.com";
-
     try {
       const response = await fetch(`${url}/user/signup`, {
         method: "POST",

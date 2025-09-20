@@ -2,9 +2,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50vh;
-    width: 20vw;
-    margin: 150px auto;
+    height: auto;
+    width: 30vw;
+    margin: 100px auto;
     border-radius: 50px;
     background-color: rgba(253, 253, 253, 0.486);
     flex-direction: column;
@@ -12,10 +12,4 @@
     text-shadow: 3px 2px 5px #00000059;
     box-shadow: 25px 20px 15px 10px rgba(0, 0, 0, 0.171);
 
-}
-
-.displayTasksContainer {
-  /* ... outros estilos ... */
-  height: 500px; /* Defina uma altura fixa, ajuste conforme necessário */
-  overflow-y: auto; /* Cria a barra de rolagem vertical */
 }
